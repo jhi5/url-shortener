@@ -8,22 +8,23 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
 	res.render('index');
 });
 
 app.get("/:url", function(req, res) {
-	var url = parseInt(req.params.url);
+	var url = req.params.url;
+	url = url.toString();
 	db.shortener.findAll({
 		where: {
 			shortUrl: url
 		}
 	}).then(function(data) {
-		if(data.length<1){
-					res.send({
-			"error": "Couldn't find that one in the database! Hit back to try again."
-		})
-		}else{
+		if (data.length < 1) {
+			res.send({
+				"error": "Couldn't find that one in the database! Hit back to try again."
+			})
+		} else {
 			res.redirect(data[0]["url"]);
 		}
 	})
