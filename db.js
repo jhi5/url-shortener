@@ -20,10 +20,6 @@ db.shortener = sequelize.import(__dirname + '/models/shortener.js');
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-db.shortener.create({
-	url: "test",
-	shortUrl: "test",
-	isValid: true
-})
-
 module.exports = db;
+
+//this initializes the database

@@ -11,11 +11,8 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			allowNull: false,
 			defaultValue: false
-		},
-		isValid: {
-			type: DataTypes.BOOLEAN,
-			allowNull: true,
-			defaultValue: false
 		}
 	});
 };
+
+//the model defines the database parameters
