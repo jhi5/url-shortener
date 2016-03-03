@@ -24,7 +24,8 @@ app.get("/:url", function(req, res) {
 			"error": "Couldn't find that one in the database! Hit back to try again."
 		})
 		}else{
-			res.redirect(data[0]["url"]);
+			var redirector = parseInt(data[0]["url"]);
+			res.redirect(redirector);
 		}
 	})
 });
