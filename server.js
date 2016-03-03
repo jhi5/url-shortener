@@ -8,6 +8,10 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 app.use(express.static(__dirname + '/public'));
 
+app.get('/', function(req, res){
+	res.render('index');
+});
+
 app.get("/:url", function(req, res) {
 	var url = req.params.url;
 	db.shortener.findAll({
