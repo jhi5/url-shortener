@@ -1,0 +1,19 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "sequelize": "^3.19.3",
+    "sequelize-cli": "^2.3.1",
+    "shorturl": "0.0.3",
+    "sqlite3": "^3.1.1",
+    "valid-url": "^1.0.9"
+  }
+}
