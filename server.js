@@ -58,9 +58,7 @@ app.get("/new/:url*", function(req, res) {
 });
 
 
-db.sequelize.sync({
-	force: true
-}).then(function() {
+db.sequelize.sync({}).then(function() {
 	app.listen(PORT, function() {
 		console.log("Express listening on port " + PORT);
 	});
