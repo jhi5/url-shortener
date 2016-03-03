@@ -31,7 +31,7 @@ app.get("/:url", function(req, res) {
 
 app.get("/new/:url*", function(req, res) {
 	var url = req.url.slice(5);
-	var shortUrl = Math.floor(1000 + Math.random() * 9000);
+	var shortUrl = (Math.floor(1000 + Math.random() * 9000)).toString();
 	if (validUrl.isUri(url) === undefined) {
 		res.send({
 			"error": "Not a valid URL"
