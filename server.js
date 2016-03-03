@@ -13,7 +13,7 @@ app.get('/', function(req, res){
 });
 
 app.get("/:url", function(req, res) {
-	var url = req.params.url;
+	var url = parseInt(req.params.url);
 	db.shortener.findAll({
 		where: {
 			shortUrl: url
@@ -24,8 +24,7 @@ app.get("/:url", function(req, res) {
 			"error": "Couldn't find that one in the database! Hit back to try again."
 		})
 		}else{
-			var redirector = parseInt(data[0]["url"]);
-			res.redirect(redirector);
+			res.redirect(data[0]["url"]);
 		}
 	})
 });
